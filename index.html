@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p11_jsevents</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <style>
+       
+        @import url('https://fonts.googleapis.com/css2?family=Rowdies&display=swap');
+       
+        .container{
+            display: flex;
+            flex: row;
+            width: 100%;
+            height: 100vh;
+        }
+        #un{
+            background-color: green;
+            width: 50%;
+            height: 100vh;
+            color: yellow;
+            
+        }
+        #dos{
+            background-color: yellow;
+            width: 50%;
+            height: 100vh;
+            color: green;
+        }
+        p{
+            display: flex;
+            font-family: 'Rowdies', "cursive";
+            font-size: 5em;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        @media (max-width: 1024px){
+            .container{
+                flex-direction: column;
+            }
+            #un,#dos{
+                width: 100%;
+            }
+        }
+    </style>
+    <script>
+       
+          $(document).ready(function(){
+            //  $("#un").hover(function(){
+            //      $("#un p").toggle();
+            //  });
+            //  $("#dos").hover(function(){
+            //      $("#dos p").toggle();
+            //  });
+
+            //$("#un p").on("click", function(){
+            //    $("p").css("font-size", "15em");
+            //});
+
+            //$("#dos").on("mouseenter", function(){
+            //    $(this).css("width", "100%")
+            //    $("#un").hide();
+            //});
+
+            // $("#un").on("mouseleave", function(){
+            //     $(this).css("background", "black")
+            //     $("p").css("color", "white");
+            // });
+            // $("#un").on("mouseenter", function(){
+            //     $(this).css("background", "white")
+            //     $("p").css("color", "black");
+            // });
+
+            $("#un").on("mousedown", function(){
+                $("#un p").css("transform", "rotate(180deg)")
+            });
+            $("#dos").on("mouseup", function(){
+                $("#dos p").css("transform", "rotate(180deg)")
+            });
+            
+            });
+       
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="un">
+            <p>hola</p>
+        </div>
+        <div id="dos">
+            <p>mòn</p>
+        </div>
+    </div>
+</body>
+</html>
